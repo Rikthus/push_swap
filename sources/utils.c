@@ -1,35 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tulipe <tulipe@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/24 00:00:11 by tulipe            #+#    #+#             */
-/*   Updated: 2022/05/24 15:41:56 by tulipe           ###   ########lyon.fr   */
+/*   Created: 2022/05/24 15:47:00 by tulipe            #+#    #+#             */
+/*   Updated: 2022/05/24 16:00:36 by tulipe           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	main(int argc, char **argv)
+int	ft_atoi(char *str)
 {
-	t_elem	*a;
-	t_elem	*b;
-	
-	if (argc < 2)
-		return (0);
-	else if (!parsing(argc, argv))
+	int	i;
+	int	nb;
+	int	minus;
+
+	i = 0;
+	nb = 0;
+	minus = 1;
+	if (str[i] == '-')
 	{
-		write(2, "Error\n", 6);
-		return (1);
+		minus *= -1;
+		i++;
 	}
-	// if (!init(&a, &b, argv[1]))
-	// {
-	// 	write(2, "Error\n", 6);
-	// 	return (2);
-	// }
-	// swap(&a, &b);
-	// free_stack(a);
-	return (0);
+	while (str[i])
+	{
+		if (str[i] > '9' || str[i] < '0')
+			return (0);
+		nb = nb * 10 + str[i] - '0';
+		i++;
+	}
+	return (nb * minus);
+}
+
+int	ft_strcmp(char *s1, char *s2)
+{
+	int	i;
+
+	i = 0;
+	while ((s1[i] || s2[i]) && s1[i] == s2[i])
+		i++;
+	return (s1[i] - s2[i]);
 }
