@@ -22,7 +22,7 @@ INCS	:=	$(addprefix $(DIR_INCS)/,$(LST_INCS))
 all	:	$(NAME)
 
 $(NAME)	:	$(OBJS)
-			$(CC) $(CFLAGS) $^ -o $@
+			$(CC) $(CFLAGS) $< -o $@
 
 $(DIR_OBJS)/%.o	:	$(DIR_SRCS)/%.c $(INCS) Makefile | $(DIR_OBJS)
 					$(CC) $(CFLAGS) -I $(DIR_INCS) -c $< -o $@
