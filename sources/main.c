@@ -6,7 +6,7 @@
 /*   By: tulipe <tulipe@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 00:00:11 by tulipe            #+#    #+#             */
-/*   Updated: 2022/05/26 10:15:58 by tulipe           ###   ########lyon.fr   */
+/*   Updated: 2022/05/26 11:05:00 by tulipe           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,12 @@ int	main(int argc, char **argv)
 		write(2, "Error\n", 6);
 		return (1);
 	}
-	if (!init(&a, argc, argv))
+	if (!init(&a, &b, argc, argv))
 	{
 		write(2, "Error\n", 6);
 		return (2);
 	}
-	// swap(&a, &b);
-	test_stack(&a);
+	// algo
 	free_stack(&a);
 	return (0);
 }

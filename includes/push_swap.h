@@ -6,7 +6,7 @@
 /*   By: tulipe <tulipe@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 23:58:29 by tulipe            #+#    #+#             */
-/*   Updated: 2022/05/26 09:57:14 by tulipe           ###   ########lyon.fr   */
+/*   Updated: 2022/05/26 10:58:37 by tulipe           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,13 @@ typedef struct s_elem
 int		parsing(int argc, char **argv);
 
 // INIT
-int	init(t_elem **a, int nb_args, char **args);
+int	init(t_elem **a, t_elem **b, int nb_args, char **args);
+
+// SWAP_OPS
+void	swap(t_elem **stack);
+void	push(t_elem **from, t_elem **to);
+void	rotate(t_elem **stack);
+void	rev_rotate(t_elem **stack);
 
 // UTILS
 int		ft_atoi(char *str);

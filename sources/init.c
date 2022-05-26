@@ -6,7 +6,7 @@
 /*   By: tulipe <tulipe@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 01:24:01 by tulipe            #+#    #+#             */
-/*   Updated: 2022/05/26 10:16:50 by tulipe           ###   ########lyon.fr   */
+/*   Updated: 2022/05/26 10:40:46 by tulipe           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,12 +56,13 @@ static	void	rank_stack_values(t_elem **stack, int nb_values)
 	}
 }
 
-int	init(t_elem **a, int nb_args, char **args)
+int	init(t_elem **a, t_elem **b, int nb_args, char **args)
 {
 	int	i;
 
 	i = 1;
 	*a = NULL;
+	*b = NULL;
 	while (i < nb_args)
 	{
 		if (!create_elem(a, ft_atoi(args[i])))
