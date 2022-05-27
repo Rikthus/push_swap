@@ -11,6 +11,11 @@ DIR_INCS	:=	includes
 
 LST_SRCS	:=	main.c \
 				parsing.c \
+				init.c \
+				swap_ops.c \
+				radix_sort.c \
+				tiny_sort.c \
+				cleaner.c \
 				utils.c
 LST_OBJS	:=	$(LST_SRCS:.c=.o)
 LST_INCS	:=	push_swap.h
@@ -22,7 +27,7 @@ INCS	:=	$(addprefix $(DIR_INCS)/,$(LST_INCS))
 all	:	$(NAME)
 
 $(NAME)	:	$(OBJS)
-			$(CC) $(CFLAGS) $< -o $@
+			$(CC) $(CFLAGS) $^ -o $@
 
 $(DIR_OBJS)/%.o	:	$(DIR_SRCS)/%.c $(INCS) Makefile | $(DIR_OBJS)
 					$(CC) $(CFLAGS) -I $(DIR_INCS) -c $< -o $@
@@ -34,11 +39,11 @@ clean	:
 			rm -rf $(OBJS)
 
 fclean	:
-			clean
+			$(MAKE) clean
 			rm -rf $(NAME)
 
 re	:
-		fclean
-		all
+		$(MAKE) fclean
+		$(MAKE) all
 
 .PHONY	:	all clean fclean re

@@ -6,7 +6,7 @@
 /*   By: tulipe <tulipe@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 01:24:01 by tulipe            #+#    #+#             */
-/*   Updated: 2022/05/26 10:40:46 by tulipe           ###   ########lyon.fr   */
+/*   Updated: 2022/05/28 00:26:39 by tulipe           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static	int	create_elem(t_elem **a, int value)
 	return (1);
 }
 
-static	void	rank_stack_values(t_elem **stack, int nb_values)
+static	void	rank_stack_values(t_elem **stack)
 {
 	int		i;
 	t_elem	*actual;
@@ -51,7 +51,7 @@ static	void	rank_stack_values(t_elem **stack, int nb_values)
 				i++;
 			actual = actual->next;
 		}
-		to_rank->rank = nb_values - i;
+		to_rank->rank = i;
 		to_rank = to_rank->next;
 	}
 }
@@ -72,6 +72,6 @@ int	init(t_elem **a, t_elem **b, int nb_args, char **args)
 		}
 		i++;
 	}
-	rank_stack_values(a, nb_args - 1);
+	rank_stack_values(a);
 	return (1);
 }
