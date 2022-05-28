@@ -14,7 +14,10 @@ LST_SRCS	:=	main.c \
 				init.c \
 				swap_ops.c \
 				radix_sort.c \
+				chunk_sort.c \
 				tiny_sort.c \
+				a_to_b.c \
+				b_to_a.c \
 				cleaner.c \
 				utils.c
 LST_OBJS	:=	$(LST_SRCS:.c=.o)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tulipe <tulipe@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: maxperei <maxperei@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 00:00:11 by tulipe            #+#    #+#             */
-/*   Updated: 2022/05/28 01:37:46 by tulipe           ###   ########lyon.fr   */
+/*   Updated: 2022/05/28 18:23:24 by maxperei         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static	void	mini_sort(t_elem **a, t_elem **b, int lst_size)
 static	int	get_max_place(int max_rank)
 {
 	int	i;
-	
+
 	i = 0;
 	while ((max_rank >> i) != 0)
 		i++;
@@ -55,7 +55,7 @@ int	main(int argc, char **argv)
 {
 	t_elem	*a;
 	t_elem	*b;
-	
+
 	if (argc < 2)
 		return (0);
 	else if (!parsing(argc, argv))
@@ -70,8 +70,10 @@ int	main(int argc, char **argv)
 	}
 	if (argc < 7 && !sorted(&a))
 		mini_sort(&a, &b, argc - 1);
-	else if (!sorted(&a))
+	else if (!sorted(&a) && argc == 501)
 		radix_sort(&a, &b, argc - 1, get_max_place(argc - 2));
+	else if (!sorted(&a))
+		chunk_sort(&a, &b, 11);
 	test_stack(&a);
 	free_stack(&a);
 	return (0);
