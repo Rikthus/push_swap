@@ -6,7 +6,7 @@
 /*   By: tulipe <tulipe@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/26 13:08:31 by maxperei          #+#    #+#             */
-/*   Updated: 2022/05/28 00:50:09 by tulipe           ###   ########lyon.fr   */
+/*   Updated: 2022/05/28 22:07:14 by tulipe           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,19 @@ static	int	check_caseA(t_elem **a)
 	t_elem	*comp;
 
 	comp = *a;
-	if (comp->rank != 4)
-		return (0);
-	comp = comp->next;
-	if (comp->rank != 1)
-		return (0);
-	comp = comp->next;
-	if (comp->rank != 5)
-		return (0);
-	comp = comp->next;
 	if (comp->rank != 3)
 		return (0);
 	comp = comp->next;
+	if (comp->rank != 0)
+		return (0);
+	comp = comp->next;
+	if (comp->rank != 4)
+		return (0);
+	comp = comp->next;
 	if (comp->rank != 2)
+		return (0);
+	comp = comp->next;
+	if (comp->rank != 1)
 		return (0);
 	return (1);
 }
@@ -39,19 +39,19 @@ static	int	check_caseB(t_elem **a)
 	t_elem	*comp;
 
 	comp = *a;
-	if (comp->rank != 4)
-		return (0);
-	comp = comp->next;
 	if (comp->rank != 3)
-		return (0);
-	comp = comp->next;
-	if (comp->rank != 5)
 		return (0);
 	comp = comp->next;
 	if (comp->rank != 2)
 		return (0);
 	comp = comp->next;
+	if (comp->rank != 4)
+		return (0);
+	comp = comp->next;
 	if (comp->rank != 1)
+		return (0);
+	comp = comp->next;
+	if (comp->rank != 0)
 		return (0);
 	return (1);
 }
@@ -91,16 +91,17 @@ void	small_sort(t_elem **a, t_elem **b, int lst_size)
 		return (resolveB(a, b));
 	tmp = *a;
 	if (lst_size == 5)
-		a_to_b(a, b, 5);
-	a_to_b(a, b, 4);
+		a_to_b(a, b, 4);
+	a_to_b(a, b, 3);
+
 	if (!sorted(a))
 		tiny_sort(a);
-	b_to_a(b, a, 4);
+	b_to_a(b, a, 3);
 	rotate(a);
 	write(1, "ra\n", 3);
 	if (lst_size == 5)
 	{
-		b_to_a(b, a, 5);
+		b_to_a(b, a, 4);
 		rotate(a);
 		write(1, "ra\n", 3);
 	}

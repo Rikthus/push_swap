@@ -6,7 +6,7 @@
 /*   By: tulipe <tulipe@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 15:12:34 by maxperei          #+#    #+#             */
-/*   Updated: 2022/05/28 00:48:31 by tulipe           ###   ########lyon.fr   */
+/*   Updated: 2022/05/28 22:08:13 by tulipe           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static	void	rt_down(t_elem **a, t_elem **b, int iter, int lst_size)
 {
-	while (iter < (lst_size + 1))
+	while (iter < lst_size)
 	{
 		rev_rotate(a);
 		write(1, "rra\n", 4);
@@ -26,7 +26,7 @@ static	void	rt_down(t_elem **a, t_elem **b, int iter, int lst_size)
 
 static	void	rt_up(t_elem **a, t_elem **b, int iter)
 {
-	while (iter > 1)
+	while (iter > 0)
 	{
 		rotate(a);
 		write(1, "ra\n", 3);
@@ -43,14 +43,14 @@ void	a_to_b(t_elem **a, t_elem **b, int rk)
 	t_elem	*actual;
 
 	actual = *a;
-	iter = 1;
+	iter = 0;
 	lst_size = ft_lstsize(*a);
 	while (actual->rank != rk)
 	{
 		actual = actual->next;
 		iter++;
 	}
-	if (iter <= (lst_size / 2) || iter == 1)
+	if (iter <= (lst_size / 2) || iter == 0)
 		rt_up(a, b, iter);
 	else
 		rt_down(a, b, iter, lst_size);

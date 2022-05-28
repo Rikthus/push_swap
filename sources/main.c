@@ -3,33 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maxperei <maxperei@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: tulipe <tulipe@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 00:00:11 by tulipe            #+#    #+#             */
-/*   Updated: 2022/05/28 18:23:24 by maxperei         ###   ########lyon.fr   */
+/*   Updated: 2022/05/28 22:11:16 by tulipe           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-static	void	test_stack(t_elem **stack)
-{
-	t_elem	*actual;
-
-	if (!*stack)
-		return ;
-	actual = *stack;
-	while (actual)
-	{
-		printf("\nvalue: %d\nrank: %d\n", actual->value, actual->rank);
-		actual = actual->next;
-	}
-}
-
 static	void	mini_sort(t_elem **a, t_elem **b, int lst_size)
 {
-	(void)lst_size;
-	(void)b;
 	if (lst_size == 2)
 	{
 		write(1, "ra\n", 3);
@@ -37,8 +21,8 @@ static	void	mini_sort(t_elem **a, t_elem **b, int lst_size)
 	}
 	else if (lst_size == 3)
 		tiny_sort(a);
-	// else
-	// 	small_sort(a, b, lst_size);
+	else
+		small_sort(a, b, lst_size);
 }
 
 static	int	get_max_place(int max_rank)
@@ -70,11 +54,10 @@ int	main(int argc, char **argv)
 	}
 	if (argc < 7 && !sorted(&a))
 		mini_sort(&a, &b, argc - 1);
-	else if (!sorted(&a) && argc == 501)
+	else if (!sorted(&a) && argc > 101)
 		radix_sort(&a, &b, argc - 1, get_max_place(argc - 2));
 	else if (!sorted(&a))
-		chunk_sort(&a, &b, 11);
-	test_stack(&a);
+		chunk_sort(&a, &b, 14);
 	free_stack(&a);
 	return (0);
 }

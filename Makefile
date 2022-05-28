@@ -15,6 +15,7 @@ LST_SRCS	:=	main.c \
 				swap_ops.c \
 				radix_sort.c \
 				chunk_sort.c \
+				small_sort.c \
 				tiny_sort.c \
 				a_to_b.c \
 				b_to_a.c \
