@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tulipe <tulipe@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: maxperei <maxperei@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 01:23:47 by tulipe            #+#    #+#             */
-/*   Updated: 2022/05/28 01:25:01 by tulipe           ###   ########lyon.fr   */
+/*   Updated: 2022/05/31 11:43:40 by maxperei         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static	int	is_all_num(int nb_args, char **args)
 			if (j == 0 && (args[i][j] > '9' || args[i][j] < '0'))
 			{
 				if (args[i][j] != '-')
-					return (0);	
+					return (0);
 			}
 			else if (args[i][j] > '9' || args[i][j] < '0')
 				return (0);
@@ -61,7 +61,7 @@ static	int	is_no_double(int nb_args, char **args)
 	while (i < nb_args)
 	{
 		j = i + 1;
-		while(j < nb_args)
+		while (j < nb_args)
 		{
 			if (ft_atoi(args[i]) == ft_atoi(args[j]))
 				return (0);

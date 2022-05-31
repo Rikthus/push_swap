@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   b_to_a.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tulipe <tulipe@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: maxperei <maxperei@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 10:12:20 by maxperei          #+#    #+#             */
-/*   Updated: 2022/05/28 00:50:52 by tulipe           ###   ########lyon.fr   */
+/*   Updated: 2022/05/31 11:42:37 by maxperei         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,9 @@ static void	rt_up(t_elem **b, t_elem **a, int iter)
 
 void	b_to_a(t_elem **b, t_elem **a, int rk)
 {
-	int iter;
-	int lst_size;
-	t_elem *actual;
+	int		iter;
+	int		lst_size;
+	t_elem	*actual;
 
 	actual = *b;
 	iter = 1;

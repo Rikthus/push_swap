@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tulipe <tulipe@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: maxperei <maxperei@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 01:24:01 by tulipe            #+#    #+#             */
-/*   Updated: 2022/05/28 00:26:39 by tulipe           ###   ########lyon.fr   */
+/*   Updated: 2022/05/31 11:43:21 by maxperei         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static	int	create_elem(t_elem **a, int value)
 {
 	t_elem	*new_elem;
 	t_elem	*elem_iter;
-	
+
 	new_elem = malloc(sizeof(t_elem));
 	if (!new_elem)
 		return (0);
@@ -27,7 +27,7 @@ static	int	create_elem(t_elem **a, int value)
 	else
 	{
 		elem_iter = *a;
-		while(elem_iter->next)
+		while (elem_iter->next)
 			elem_iter = elem_iter->next;
 		elem_iter->next = new_elem;
 	}
@@ -39,12 +39,12 @@ static	void	rank_stack_values(t_elem **stack)
 	int		i;
 	t_elem	*actual;
 	t_elem	*to_rank;
-	
+
 	to_rank = *stack;
 	while (to_rank)
 	{
 		i = 0;
-		actual = *stack;	
+		actual = *stack;
 		while (actual)
 		{
 			if (to_rank->value > actual->value)

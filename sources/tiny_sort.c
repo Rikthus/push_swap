@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   tiny_sort.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tulipe <tulipe@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: maxperei <maxperei@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 23:44:54 by tulipe            #+#    #+#             */
-/*   Updated: 2022/05/28 00:09:56 by tulipe           ###   ########lyon.fr   */
+/*   Updated: 2022/05/31 11:46:36 by maxperei         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ static	void	sort_one_case(t_elem **stack)
 		swap(stack);
 		write(1, "sa\n", 3);
 	}
-	
 }
 
 static	void	sort_two_case(t_elem **stack)

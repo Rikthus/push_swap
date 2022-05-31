@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap_ops.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tulipe <tulipe@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: maxperei <maxperei@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 01:24:19 by tulipe            #+#    #+#             */
-/*   Updated: 2022/05/26 11:03:52 by tulipe           ###   ########lyon.fr   */
+/*   Updated: 2022/05/31 11:46:23 by maxperei         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	push(t_elem **from, t_elem **to)
 	tmp_to = *to;
 	*to = *from;
 	(*to)->next = tmp_to;
-	*from = tmp_from_next; 
+	*from = tmp_from_next;
 }
 
 void	rotate(t_elem **stack)
@@ -58,7 +58,7 @@ void	rev_rotate(t_elem **stack)
 {
 	t_elem	*before_last;
 	t_elem	*last;
-	
+
 	if (!*stack || !(*stack)->next)
 		return ;
 	before_last = *stack;

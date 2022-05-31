@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tulipe <tulipe@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: maxperei <maxperei@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 15:47:00 by tulipe            #+#    #+#             */
-/*   Updated: 2022/05/28 01:27:32 by tulipe           ###   ########lyon.fr   */
+/*   Updated: 2022/05/31 11:46:49 by maxperei         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_atoi(char *str)
 {
-	int				i;
-	long	long	nb;
-	int				minus;
+	int			i;
+	long long	nb;
+	int			minus;
 
 	i = 0;
 	nb = 0;
@@ -59,10 +59,10 @@ int	sorted(t_elem **stack)
 	while (tmp)
 	{
 		if (tmp->rank != i)
-			return (0);	
+			return (0);
 		tmp = tmp->next;
 		i++;
-	}	
+	}
 	return (1);
 }
 
